@@ -8,7 +8,7 @@ const totalTimeEl = document.getElementById("totalTime");
 const logEl = document.getElementById("log");
 
 // 🔧 CONFIGURATION
-const DOWN_ANGLE_THRESHOLD = 0.09; // Adjust sensitivity
+const DOWN_ANGLE_THRESHOLD = 0.07; // Adjust sensitivity
 const ALERT_INTERVAL_MS = 2000; // Play sound every second
 
 // Tracking variables
