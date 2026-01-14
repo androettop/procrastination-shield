@@ -31,7 +31,7 @@ Stop procrastination with real-time face detection monitoring. This app uses you
 
 1. Clone the repository:
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/androettop/procrastination-shield.git
 cd procrastination-shield
 ```
 
@@ -62,7 +62,7 @@ You can adjust the sensitivity in `app.js`:
 
 ```javascript
 const DOWN_ANGLE_THRESHOLD = 0.09; // Adjust sensitivity (lower = more sensitive)
-const ALERT_INTERVAL_MS = 2000;    // Play sound every second (milliseconds)
+const ALERT_INTERVAL_MS = 2000;    // Play sound every 2 seconds (milliseconds)
 ```
 
 ## 🌐 Browser Requirements
