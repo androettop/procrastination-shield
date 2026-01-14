@@ -60,12 +60,12 @@ faceMesh.onResults(results => {
       lookDownStartTime = now;
       lastAlertTime = now;
       alertSound.play();
-      statusText.textContent = "Looking at phone...";
+      statusText.textContent = "PROCRASTINATING";
       statusText.className = "status-text warning";
     } else {
       // Still looking down - update duration and play sound repeatedly
       const duration = Math.floor((now - lookDownStartTime) / 1000);
-      statusText.textContent = `Looking at phone (${duration}s)`;
+      statusText.textContent = `Procrastinating (${duration}s)`;
       statusText.className = "status-text warning";
       
       // Play alert sound repeatedly
@@ -166,18 +166,28 @@ function drawPipFrame() {
   pipCtx.fillText(`${formatTime(totalProcrastinationTime)}`, 220, 105);
   
   // Status
-  pipCtx.fillStyle = isLookingDown ? '#ff4444' : '#4caf50';
-  pipCtx.font = 'bold 24px -apple-system, sans-serif';
-  const statusMsg = isLookingDown ? 'LOOKING DOWN' : 'Focused';
-  pipCtx.fillText(statusMsg, 20, 155);
+  let displayStatus = statusText.textContent;
+  const statusClass = statusText.className;
   
-  // If looking down, show duration
-  if (isLookingDown && lookDownStartTime) {
+  // If procrastinating, show uppercase with duration
+  if (statusClass.includes('warning') && isLookingDown && lookDownStartTime) {
     const duration = Math.floor((Date.now() - lookDownStartTime) / 1000);
-    pipCtx.fillStyle = '#888';
-    pipCtx.font = '16px -apple-system, sans-serif';
-    pipCtx.fillText(`(${duration}s)`, 20, 180);
+    displayStatus = `PROCRASTINATING (${duration}s)`;
   }
+  
+  // Determine color based on status class
+  if (statusClass.includes('error')) {
+    pipCtx.fillStyle = '#ff4444';
+  } else if (statusClass.includes('warning')) {
+    pipCtx.fillStyle = '#ff4444';
+  } else if (statusClass.includes('active')) {
+    pipCtx.fillStyle = '#4caf50';
+  } else {
+    pipCtx.fillStyle = '#888';
+  }
+  
+  pipCtx.font = 'bold 24px -apple-system, sans-serif';
+  pipCtx.fillText(displayStatus, 20, 155);
   
   pipAnimationFrame = requestAnimationFrame(drawPipFrame);
 }
