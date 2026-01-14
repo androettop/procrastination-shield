@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Procrastination Shield</title>
+
+  <!-- MediaPipe -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="container">
+  <div class="header">
+    <div class="title-wrapper">
+      <img src="shield-logo.svg" alt="Shield Logo" class="shield-logo" width="70" height="84">
+      <h1>Procrastination Shield</h1>
+    </div>
+    <div class="control-panel">
+      <div class="status-wrapper">
+        <span class="status-label">Status:</span>
+        <span id="status" class="status-text">Ready to start</span>
+      </div>
+      <button id="pipButton" class="pip-button">Start Detection</button>
+    </div>
+  </div>
+  
+  <div class="stats">
+    <div class="stat-box">
+      <div class="stat-number" id="totalCount">0</div>
+      <div class="stat-label">Times Checked Phone</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" id="totalTime">0s</div>
+      <div class="stat-label">Total Time</div>
+    </div>
+  </div>
+
+  <div class="log-section">
+    <h3>Procrastination Log</h3>
+    <div id="log"></div>
+  </div>
+</div>
+
+<!-- Hidden elements for face detection -->
+<video id="video" autoplay muted style="display: none;"></video>
+<canvas id="canvas" style="display: none;"></canvas>
+<audio id="alertSound" src="alert.mp3"></audio>
+
+<script src="app.js"></script>
+</body>
+</html>

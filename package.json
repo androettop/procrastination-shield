@@ -1,0 +1,15 @@
+{
+  "name": "procrastination-shield",
+  "version": "1.0.0",
+  "description": "Procrastination Shield - Stop procrastination with real-time face detection monitoring",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "serve ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.5"
+  }
+}

@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a0a;
+  color: #e0e0e0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+
+.header {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 30px;
+}
+
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.shield-logo {
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.control-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+}
+
+.status-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-label {
+  color: #666;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.status-text {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.status-text.active {
+  color: #4caf50;
+}
+
+.status-text.error {
+  color: #ff4444;
+}
+
+.status-text.warning {
+  color: #ffa726;
+}
+
+.header-content {
+  flex: 1;
+}
+
+.pip-button {
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+}
+
+.pip-button:hover {
+  background: #ff5555;
+  box-shadow: 0 4px 12px rgba(255, 68, 68, 0.4);
+  transform: translateY(-1px);
+}
+
+.pip-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+}
+
+.pip-button:disabled {
+  background: #444;
+  cursor: not-allowed;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-box {
+  flex: 1;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 200;
+  color: #ff4444;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.log-section {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+}
+
+.log-section h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#log {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.log-entry {
+  padding: 12px;
+  border-bottom: 1px solid #2a2a2a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.log-entry:last-child {
+  border-bottom: none;
+}
+
+.log-time {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.log-duration {
+  color: #ff4444;
+  font-weight: 500;
+}
